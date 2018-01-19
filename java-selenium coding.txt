@@ -1,0 +1,59 @@
+Q.How to launch a batch file in a Selenium Webdriver project?
+
+Ans:Process batch = Runtime.getRuntime.exec("path of the batch file");
+batch.waitFor();
+
+
+Q: How do you read a JavaScript variable in Selenium WebDriver?
+
+Ans:JavascriptExecutor JS = (JavascriptExecutor) webdriver;
+// Get the current site title.
+String sitetitle = (String)JS.executeScript("return document.title");
+System.out.println("My Site Title: " + sitetitle);
+
+
+Q: How to run the Selenium Webdriver test from the command line?
+
+Ans. We can run any Selenium Webdriver test written in Java using the following command.
+
+java -classpath ".;selenium-server-standalone-2.33.0.jar" SampleClass.
+
+
+Q: What are the different exceptions you face in Selenium Webdriver?
+
+Ans. 
+
+WebDriverException,
+NoAlertPresentException,
+NoSuchWindowException,
+NoSuchElementException,
+TimeoutException
+
+Q: How can you check the state of a checkbox/radio button?
+
+Ans. We can call the isSelected() method to test the status of these elements.
+
+Example Code:
+
+boolean test = driver.findElement(By.xpath("checkbox/radio button XPath")).isSelected();
+
+
+
+Q: How would you fill a text field without calling the sendKeys()?
+
+Ans. It's a bit slower than the sendKeys() method but we do have means to type in a text field. See the Java code given below.
+
+JavascriptExecutor JS = (JavascriptExecutor)webdriver;
+
+JS.executeScript("document.getElementById(User').value='admin@testmail.com'");
+
+
+
+Q: What is the main difference between the close() and quit() methods?
+
+Ans.
+
+close() - it closes the currently active browser window.
+
+quit()- it will close all of the opened browser windows and the browser itself
+
